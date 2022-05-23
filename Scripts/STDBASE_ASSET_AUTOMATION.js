@@ -140,6 +140,7 @@ function assetAutomation(rules) {
 	var vParentCapId = null;
 	var rulesAssetGroup = handleUndefined(rules.action.assetGroup,false);
 	var rulesAssetType = handleUndefined(rules.action.assetType,false);
+	var maskName = handleUndefined(rules.action.maskName,false);
 
 	if (rules.action.checkExistingAsset) {
 		
@@ -167,7 +168,7 @@ function assetAutomation(rules) {
 		// If no masterAsset is found attempt to find it by Custom Fields if any are defined
 		if(!masterAsset && rules.action.hasOwnProperty("customFieldsDefaultMapping") && rules.action.customFieldsDefaultMapping.length > 0){
 			logDebug("Search by Custom Fields customFieldsDefaultMapping.length = "+ rules.action.customFieldsDefaultMapping.length);
-			masterAssetModelForSearch = fillMasterModelFromASI(rules, false);
+			masterAssetModelForSearch = fillMasterModelFromASI(rules, true);
 			masterAsset = findAssetByMasterAssetModel(masterAssetModelForSearch);
 			if (masterAsset != null) {
 				assetSeqNum = masterAsset.getG1AssetSequenceNumber();
@@ -195,8 +196,9 @@ function assetAutomation(rules) {
 		}
 
 		newAssetDataModel.setAssetMaster(masterAsset);
+
 		try {
-			assetSeqNum = assetDataService.createAssetDataWithoutEvent(newAssetDataModel);
+			assetSeqNum = assetDataService.createAssetDataWithoutEvent(newAssetDataModel); 
 		} catch (ex) {
 			logDebug("**Exception while creating asset, script STDBASE_" + scriptSuffix + " Error:" + ex);
 			return;
@@ -462,10 +464,24 @@ function fillMasterModelFromASI(rules, fillAssetId) {
 	if (fillAssetId) {
 		if(rules.action.linkParent){
 			vParentCapId = getParentByCapId(capId);
-			assetMasterModel.setG1AssetID(vParentCapId.getCustomID());
+			var maskName = rules.action.maskName;
+			if (typeof maskName  === 'undefined') {
+				logDebug("maskName is undefined");
+			}else{
+				logDebug("logDebug maskName = " + maskName);
+			}
+			if (maskName) {
+				assetMasterModel.setG1AssetID(getNextAssetSequence(maskName));
+			}else{
+				assetMasterModel.setG1AssetID(vParentCapId.getCustomID());
+			}
 		}
 		else{
-			assetMasterModel.setG1AssetID(capId.getCustomID());
+			if (rules.action.maskName) {
+				assetMasterModel.setG1AssetID(getNextAssetSequence(maskName));
+			}else{
+				assetMasterModel.setG1AssetID(capId.getCustomID());
+			}
 		}
 		
 	}//fillAssetId
@@ -494,4 +510,50 @@ function findAssetByMasterAssetModel(assetMasterModel) {
 		return asts.get(0);
 	}
 	return null;
+}
+
+function logDebugObject(myObject) {
+/*
+usage - logDebugObject(object)
+
+author - Michael Zachry
+created - 10/10/2018
+
+updates
+10/11/2018 - initial version
+
+*/
+  //list the methods
+  try {
+    logDebug("object is is a " + myObject.getClass());
+    logDebug("object has the following methods:");
+    for (x in myObject) {
+      if (typeof(myObject[x]) == "function" ) {
+        logDebug("  " + x);
+      }
+    }
+
+    //list the properties and values    
+    logDebug("object has the following properties and values:");
+    for (x in myObject) {
+      if (typeof(myObject[x]) != "function" ) {
+        logDebug("  " + x + " = " + myObject[x]);
+      }
+    }
+  } catch (err) {
+    logDebug("A JavaScript Error occured: " + err.message);
+  }
+}
+
+function getNextAssetSequence(maskName) {
+	var agencySeqBiz = aa.proxyInvoker.newInstance("com.accela.sg.AgencySeqNextBusiness").getOutput();
+	var params = aa.proxyInvoker.newInstance("com.accela.domain.AgencyMaskDefCriteria").getOutput();
+	params.setAgencyID(aa.getServiceProviderCode());
+	params.setMaskName(maskName);
+	params.setRecStatus("A");
+	params.setSeqType("ASSET ID");
+
+	var seq = agencySeqBiz.getNextMaskedSeq("ADMIN", params, null, null);
+
+	return seq;
 }
