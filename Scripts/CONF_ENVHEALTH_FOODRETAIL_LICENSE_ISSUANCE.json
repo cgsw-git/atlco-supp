@@ -29,7 +29,7 @@
           "copyContacts": [
             "ALL"
           ],
-          "createLP": true,
+          "createLP": false,
           "licenseTable": "",
           "refLPType": "Food Facility",
           "contactType": "Applicant",
