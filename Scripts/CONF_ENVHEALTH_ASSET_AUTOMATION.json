@@ -16,7 +16,8 @@
           ]
         },
         "action": {
-          "updateExistingRefAsset": true,
+		  "maskName": "EH Facility",          
+		  "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
           "checkExistingAsset": true,
@@ -58,6 +59,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -100,6 +102,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -142,6 +145,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -184,6 +188,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -226,6 +231,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -268,6 +274,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -310,6 +317,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -352,6 +360,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -394,6 +403,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -436,6 +446,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -478,6 +489,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -520,6 +532,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -562,6 +575,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -604,6 +618,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -646,6 +661,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -688,6 +704,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -730,6 +747,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -772,6 +790,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -814,6 +833,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -856,6 +876,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -898,6 +919,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -940,6 +962,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -982,6 +1005,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -1024,6 +1048,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -1066,6 +1091,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -1108,7 +1134,8 @@
           ]
         },
         "action": {
-          "updateExistingRefAsset": true,
+ 		  "maskName": "EH Facility",
+         "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
           "checkExistingAsset": true,
@@ -1150,6 +1177,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
@@ -1192,6 +1220,7 @@
           ]
         },
         "action": {
+		  "maskName": "EH Facility",
           "updateExistingRefAsset": true,
           "assetType": "Building",
           "assetGroup": "Facilities",
