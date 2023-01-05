@@ -1175,7 +1175,7 @@
       }
     ]
   },
-  "EnvHealth/Facility/*/Application": {
+  "EnvHealth/Facility/Campgrounds/Application": {
     "WorkflowTaskUpdateAfter": [
       {
         "metadata": {
