@@ -1174,5 +1174,47 @@
         "postScript": ""
       }
     ]
+  },
+  "EnvHealth/Facility/*/Application": {
+    "WorkflowTaskUpdateAfter": [
+      {
+        "metadata": {
+          "description": "Create Facility Asset",
+          "operators": {}
+        },
+        "preScript": "",
+        "criteria": {
+          "task": [
+            "Permit Issuance"
+          ],
+          "status": [
+            "Issued"
+          ]
+        },
+        "action": {
+          "updateExistingRefAsset": true,
+          "assetType": "Building",
+          "assetGroup": "Facilities",
+          "checkExistingAsset": true,
+          "dateOfService": "",
+          "status": "Pending",
+          "copyContacts": [
+            "Facility Owner",
+            "Property Manager"
+          ],
+          "copyAddress": [
+            "ALL"
+          ],
+          "customFieldsDefaultMapping": {},
+          "linkParent": true,
+          "copyDocumentTypes": [
+            "Site Plan",
+            "Building Plan"
+          ],
+          "copyAppNameToAssetName": true
+        },
+        "postScript": ""
+      }
+    ]
   }
 }
